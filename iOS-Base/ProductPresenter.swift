@@ -18,6 +18,7 @@ protocol ProductView: NSObjectProtocol {
     func finishLoading()
     func setObject(datas: [ProductViewData])
     func setEmptyObject()
+    func setErrorMessageFromAPI(errorMessage: String)
 }
 
 class ProductPresenter {
@@ -38,14 +39,12 @@ class ProductPresenter {
     }
     
     // MARK: - API Call
-    func getProductsWithAPI(route: String, errorCallBack: @escaping (_ errorMessage: String) -> Void) {
+    func getProductsWithAPI() {
         self.productView?.startLoading()
         
-        APIManager.sharedInstance.POSTAPIWithResponseObject(route: route,
+        APIManager.sharedInstance.POSTAPIWithResponseObject(route: Constant.RouteProduct,
                                                             parameter: ["page":"0"],
                                                             successBlock: { (responseObject: [String : Any]) in
-                                                                
-                                                                errorCallBack("")
                                                                 
                                                                 self.productService.getProducts(datas: responseObject["products"] as! Array<[String:Any]>) { [weak self](datas) in
                                                                     
@@ -63,9 +62,9 @@ class ProductPresenter {
                                                                 
         }) { (errorMessage: String) in
             
-            errorCallBack(errorMessage)
             self.productView?.finishLoading()
             self.productView?.setEmptyObject()
+            self.productView?.setErrorMessageFromAPI(errorMessage: errorMessage)
         }
         
         

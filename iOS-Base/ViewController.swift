@@ -21,11 +21,7 @@ class ViewController: BaseViewController {
         super.viewDidLoad()
         
         productPresenter.attachView(view: self)
-        productPresenter.getProductsWithAPI(route: Constant.RouteProduct) { (errorMessage) in
-            if errorMessage != "" {
-                self.basicAlertView(title: "", message: errorMessage, successBlock: {})
-            }
-        }
+        productPresenter.getProductsWithAPI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,6 +77,10 @@ extension ViewController: ProductView {
     func setEmptyObject() {
         self.tableView?.isHidden = true
         emptyView?.isHidden = false;
+    }
+    
+    func setErrorMessageFromAPI(errorMessage: String) {
+        self.basicAlertView(title: "", message: errorMessage, successBlock: {})
     }
     
 }
