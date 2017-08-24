@@ -1,11 +1,12 @@
 # README #
 
-Clapping APE iOS App Base Architecture v1.0
+Clapping APE iOS App Base Architecture
 
 ### What is this repository for? ###
 
-* Architecture: MVP
 * Version 1.0
+* Language: Swift 3
+* Architecture: MVP
 * [Learn Markdown](http://iyadagha.com/using-mvp-ios-swift/)
 
 ### How do I get set up? ###
