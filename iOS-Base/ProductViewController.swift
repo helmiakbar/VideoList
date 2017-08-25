@@ -14,7 +14,7 @@ class ProductViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyView: UIView!
     
-    fileprivate let productPresenter = ProductPresenter(productService: ProductService())
+    fileprivate let productPresenter = ProductPresenter(productService: ProductService(), userService: UserService())
     fileprivate var productsToDisplay = [ProductViewData]()
     
     override func viewDidLoad() {
@@ -22,6 +22,7 @@ class ProductViewController: BaseViewController {
         
         productPresenter.attachView(view: self)
         productPresenter.getProductsAPI()
+        productPresenter.getUserAPI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,11 +69,15 @@ extension ProductViewController: ProductView {
         self.hideLoadingIndicator()
     }
     
-    func setObject(datas: [ProductViewData]) {
+    func setProduct(datas: [ProductViewData]) {
         self.productsToDisplay = datas
         self.tableView?.isHidden = false
         self.tableView?.reloadData()
         emptyView?.isHidden = true;
+    }
+    
+    func setUser(data: UserViewData) {
+        self.userLabel.text = data.userName
     }
     
     func setEmptyObject() {

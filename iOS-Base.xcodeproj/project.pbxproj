@@ -24,7 +24,6 @@
 		9B4E03AF1F4EB82A000DC578 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E03AE1F4EB82A000DC578 /* DataManager.swift */; };
 		9B4E03B11F4EB86C000DC578 /* UtilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E03B01F4EB86C000DC578 /* UtilityManager.swift */; };
 		9B4E03B51F4EB936000DC578 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E03B41F4EB936000DC578 /* User.swift */; };
-		9B4E03B91F4EC29F000DC578 /* UserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E03B81F4EC29F000DC578 /* UserPresenter.swift */; };
 		9B4E03BB1F4EC4AB000DC578 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E03BA1F4EC4AB000DC578 /* UserService.swift */; };
 		9B4E03BE1F4EE1FB000DC578 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E03BD1F4EE1FB000DC578 /* Product.swift */; };
 		9B4E03C01F4EE27C000DC578 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E03BF1F4EE27C000DC578 /* ProductService.swift */; };
@@ -72,7 +71,6 @@
 		9B4E03AE1F4EB82A000DC578 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		9B4E03B01F4EB86C000DC578 /* UtilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityManager.swift; sourceTree = "<group>"; };
 		9B4E03B41F4EB936000DC578 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		9B4E03B81F4EC29F000DC578 /* UserPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPresenter.swift; sourceTree = "<group>"; };
 		9B4E03BA1F4EC4AB000DC578 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		9B4E03BD1F4EE1FB000DC578 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		9B4E03BF1F4EE27C000DC578 /* ProductService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
@@ -233,7 +231,6 @@
 		9B4E03A51F4E96EB000DC578 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				9B4E03B81F4EC29F000DC578 /* UserPresenter.swift */,
 				9B4E03C11F4EE38C000DC578 /* ProductPresenter.swift */,
 			);
 			name = Presenter;
@@ -557,7 +554,6 @@
 				9B4E03AD1F4EB628000DC578 /* APIManager.swift in Sources */,
 				9B4E03751F4E9033000DC578 /* ProductViewController.swift in Sources */,
 				9B4E03731F4E9033000DC578 /* AppDelegate.swift in Sources */,
-				9B4E03B91F4EC29F000DC578 /* UserPresenter.swift in Sources */,
 				9B4E03AF1F4EB82A000DC578 /* DataManager.swift in Sources */,
 				9B4E03BE1F4EE1FB000DC578 /* Product.swift in Sources */,
 				9B4E03C21F4EE38C000DC578 /* ProductPresenter.swift in Sources */,

@@ -10,14 +10,22 @@ import Foundation
 
 class UserService {
     
-    func getUser(data: [String:Any], callBack: @escaping (User) -> Void) {
+    func getUserAPI(callBack: @escaping (User) -> Void, message: @escaping (String) -> Void) {
         
-        let user = User.init(data: data)
-        
-        let delayTime = DispatchTime.now() + Double(Int64(2 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-        
-        DispatchQueue.main.asyncAfter(deadline: delayTime) {
-            callBack(user)
+        APIManager.sharedInstance.POSTAPIWithResponseObject(
+            route: Constant.RouteLogin,
+            parameter: ["email":"m.lutfiazhar@gmail.com",
+                        "password":"password",
+                        "device_id":""],
+            successBlock: { (responseObject: [String : Any]) in
+                
+                let user = User.init(data: responseObject)
+                callBack(user)
+                
+        }) { (errorMessage: String) in
+            
+            message(errorMessage)
+            
         }
         
     }

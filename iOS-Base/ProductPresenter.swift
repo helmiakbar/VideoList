@@ -13,21 +13,29 @@ struct ProductViewData{
     let productPrice: Int
 }
 
+struct UserViewData{
+    let userName: String
+    let email: String
+}
+
 protocol ProductView: NSObjectProtocol {
     func startLoading()
     func finishLoading()
-    func setObject(datas: [ProductViewData])
+    func setProduct(datas: [ProductViewData])
+    func setUser(data: UserViewData)
     func setEmptyObject()
     func setErrorMessageFromAPI(errorMessage: String)
 }
 
 class ProductPresenter {
     
-    fileprivate let productService : ProductService
     weak fileprivate var productView : ProductView?
+    fileprivate let productService : ProductService
+    fileprivate let userService : UserService
     
-    init(productService: ProductService) {
+    init(productService: ProductService, userService: UserService) {
         self.productService = productService
+        self.userService = userService
     }
     
     func attachView(view: ProductView) {
@@ -38,7 +46,6 @@ class ProductPresenter {
         self.productView = nil
     }
     
-    // MARK: - API Call
     func getProductsAPI() {
         self.productView?.startLoading()
         
@@ -52,8 +59,26 @@ class ProductPresenter {
                 let mappedObject = datas.map {
                     return ProductViewData(productName: $0.title!, productPrice: Int($0.price!))
                 }
-                self?.productView?.setObject(datas: mappedObject)
+                self?.productView?.setProduct(datas: mappedObject)
             }
+            
+        }) { (message: String) in
+            
+            self.productView?.finishLoading()
+            self.productView?.setEmptyObject()
+            self.productView?.setErrorMessageFromAPI(errorMessage: message)
+            
+        }
+        
+    }
+    
+    func getUserAPI() {
+        self.productView?.startLoading()
+        
+        self.userService.getUserAPI(callBack: { [weak self](data) in
+            
+            self?.productView?.finishLoading()
+            self?.productView?.setUser(data: UserViewData(userName: data.name!, email: data.email!))
             
         }) { (message: String) in
             

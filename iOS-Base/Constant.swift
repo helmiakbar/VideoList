@@ -17,6 +17,7 @@ struct Constant {
     
     private struct Routes {
         static let Product = "/api/v1/products/all_products_without_login"
+        static let Login = "/api/v1/users/login_process"
     }
     
     struct Notification {
@@ -27,5 +28,6 @@ struct Constant {
     
     static let BaseURL = Domains.Development
     static let RouteProduct = Routes.Product
+    static let RouteLogin = Routes.Login
     
 }
