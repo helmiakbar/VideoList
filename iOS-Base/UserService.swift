@@ -12,13 +12,7 @@ class UserService {
     
     func getUser(data: [String:Any], callBack: @escaping (User) -> Void) {
         
-        let id = data["id"] as? Int ?? nil
-        let firstName = data["first_name"] as? String ?? ""
-        let lastName = data["last_name"] as? String ?? ""
-        let email = data["email"] as? String ?? ""
-        let age = data["age"] as? Int ?? nil
-        
-        let user = User(id: id!, firstName: firstName, lastName: lastName, email: email, age: age!)
+        let user = User.init(data: data)
         
         let delayTime = DispatchTime.now() + Double(Int64(2 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
         

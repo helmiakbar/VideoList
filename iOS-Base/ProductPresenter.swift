@@ -39,35 +39,29 @@ class ProductPresenter {
     }
     
     // MARK: - API Call
-    func getProductsWithAPI() {
+    func getProductsAPI() {
         self.productView?.startLoading()
         
-        APIManager.sharedInstance.POSTAPIWithResponseObject(route: Constant.RouteProduct,
-                                                            parameter: ["page":"0"],
-                                                            successBlock: { (responseObject: [String : Any]) in
-                                                                
-                                                                self.productService.getProducts(datas: responseObject["products"] as! Array<[String:Any]>) { [weak self](datas) in
-                                                                    
-                                                                    self?.productView?.finishLoading()
-                                                                    
-                                                                    if (datas.count == 0) {
-                                                                        self?.productView?.setEmptyObject()
-                                                                    }else {
-                                                                        let mappedObject = datas.map {
-                                                                            return ProductViewData(productName: $0.productName, productPrice: $0.price)
-                                                                        }
-                                                                        self?.productView?.setObject(datas: mappedObject)
-                                                                    }
-                                                                }
-                                                                
-        }) { (errorMessage: String) in
+        self.productService.getProductsAPI(callBack: { [weak self](datas) in
+            
+            self?.productView?.finishLoading()
+            
+            if (datas.count == 0) {
+                self?.productView?.setEmptyObject()
+            }else {
+                let mappedObject = datas.map {
+                    return ProductViewData(productName: $0.title!, productPrice: Int($0.price!))
+                }
+                self?.productView?.setObject(datas: mappedObject)
+            }
+            
+        }) { (message: String) in
             
             self.productView?.finishLoading()
             self.productView?.setEmptyObject()
-            self.productView?.setErrorMessageFromAPI(errorMessage: errorMessage)
+            self.productView?.setErrorMessageFromAPI(errorMessage: message)
+            
         }
-        
-        
         
     }
 }

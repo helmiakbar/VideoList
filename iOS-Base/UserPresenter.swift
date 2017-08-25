@@ -45,7 +45,7 @@ class UserPresenter {
         userService.getUser(data: self.data) { [weak self](data) in
             self?.userView?.finishLoading()
             
-            let mappedObject = UserViewData(name: data.firstName+data.lastName, email: data.email)
+            let mappedObject = UserViewData(name: data.name!, email: data.email!)
             self?.userView?.setObject(data: mappedObject)
         }
 

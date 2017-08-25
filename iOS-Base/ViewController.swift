@@ -21,7 +21,7 @@ class ViewController: BaseViewController {
         super.viewDidLoad()
         
         productPresenter.attachView(view: self)
-        productPresenter.getProductsWithAPI()
+        productPresenter.getProductsAPI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,10 +40,11 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellidentifier")! as UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "productCell")! as UITableViewCell
 
         let product = self.productsToDisplay[indexPath.row]
-        cell.textLabel?.text = product.productName+" = "+"\(product.productPrice)"
+        cell.textLabel?.text = product.productName
+        cell.detailTextLabel?.text = "Rp "+"\(product.productPrice)"
         return cell
     }
     
