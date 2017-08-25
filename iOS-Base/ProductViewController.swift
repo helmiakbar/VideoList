@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: BaseViewController {
+class ProductViewController: BaseViewController {
 
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -32,7 +32,7 @@ class ViewController: BaseViewController {
 }
 
 
-extension ViewController: UITableViewDataSource {
+extension ProductViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.productsToDisplay.count
@@ -50,7 +50,7 @@ extension ViewController: UITableViewDataSource {
     
 }
 
-extension ViewController: UITableViewDelegate {
+extension ProductViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -58,7 +58,7 @@ extension ViewController: UITableViewDelegate {
     
 }
 
-extension ViewController: ProductView {
+extension ProductViewController: ProductView {
     
     func startLoading() {
         self.showLoadingIndicator()
