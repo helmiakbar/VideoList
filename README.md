@@ -1,8 +1,8 @@
 # README #
 
-Clapping APE iOS App Base Architecture
+Clapping APE iOS App Base Project Template
 
-### What is this repository for? ###
+### SPECIFICATIONS ###
 
 * Version 1.0
 * Language: Swift 3
