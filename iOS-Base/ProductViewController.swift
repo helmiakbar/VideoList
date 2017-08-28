@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProductViewController: BaseViewController {
+class ProductViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate, ProductView {
 
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -29,12 +29,8 @@ class ProductViewController: BaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-}
-
-
-extension ProductViewController: UITableViewDataSource {
     
+    // MARK: - Table view data source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.productsToDisplay.count
     }
@@ -42,25 +38,19 @@ extension ProductViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "productCell")! as UITableViewCell
-
+        
         let product = self.productsToDisplay[indexPath.row]
         cell.textLabel?.text = product.productName
         cell.detailTextLabel?.text = "Rp "+"\(product.productPrice)"
         return cell
     }
-    
-}
 
-extension ProductViewController: UITableViewDelegate {
-    
+    // MARK: - Table view delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-}
-
-extension ProductViewController: ProductView {
-    
+    // MARK: - Presenter delegate
     func startLoading() {
         self.showLoadingIndicator()
     }
@@ -88,6 +78,5 @@ extension ProductViewController: ProductView {
     func setErrorMessageFromAPI(errorMessage: String) {
         self.basicAlertView(title: "", message: errorMessage, successBlock: {})
     }
-    
 }
 
