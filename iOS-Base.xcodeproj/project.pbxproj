@@ -149,10 +149,7 @@
 		9B4E03711F4E9033000DC578 /* iOS-Base */ = {
 			isa = PBXGroup;
 			children = (
-				9B4E03A21F4E96CC000DC578 /* Storyboard */,
-				9B4E03A41F4E96E5000DC578 /* View */,
-				9B4E03A51F4E96EB000DC578 /* Presenter */,
-				9B4E03BC1F4EE0B3000DC578 /* Service */,
+				9BAE71361F834B3400310148 /* MVP Example */,
 				9B4E03A31F4E96D8000DC578 /* Model */,
 				9B4E03A11F4E96C7000DC578 /* Manager */,
 				9B4E03B21F4EB8FB000DC578 /* Resource */,
@@ -203,14 +200,6 @@
 			name = Manager;
 			sourceTree = "<group>";
 		};
-		9B4E03A21F4E96CC000DC578 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				9B4E03761F4E9033000DC578 /* Main.storyboard */,
-			);
-			name = Storyboard;
-			sourceTree = "<group>";
-		};
 		9B4E03A31F4E96D8000DC578 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,22 +207,6 @@
 				9B4E03BD1F4EE1FB000DC578 /* Product.swift */,
 			);
 			name = Model;
-			sourceTree = "<group>";
-		};
-		9B4E03A41F4E96E5000DC578 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				9B4E03741F4E9033000DC578 /* ProductViewController.swift */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		9B4E03A51F4E96EB000DC578 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				9B4E03C11F4EE38C000DC578 /* ProductPresenter.swift */,
-			);
-			name = Presenter;
 			sourceTree = "<group>";
 		};
 		9B4E03B21F4EB8FB000DC578 /* Resource */ = {
@@ -251,13 +224,16 @@
 			name = Font;
 			sourceTree = "<group>";
 		};
-		9B4E03BC1F4EE0B3000DC578 /* Service */ = {
+		9BAE71361F834B3400310148 /* MVP Example */ = {
 			isa = PBXGroup;
 			children = (
-				9B4E03BA1F4EC4AB000DC578 /* UserService.swift */,
+				9B4E03761F4E9033000DC578 /* Main.storyboard */,
+				9B4E03741F4E9033000DC578 /* ProductViewController.swift */,
+				9B4E03C11F4EE38C000DC578 /* ProductPresenter.swift */,
 				9B4E03BF1F4EE27C000DC578 /* ProductService.swift */,
+				9B4E03BA1F4EC4AB000DC578 /* UserService.swift */,
 			);
-			name = Service;
+			name = "MVP Example";
 			sourceTree = "<group>";
 		};
 		FE055C707F91E426CDC06E27 /* Frameworks */ = {
