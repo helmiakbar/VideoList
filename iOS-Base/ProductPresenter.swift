@@ -30,13 +30,9 @@ protocol ProductView: NSObjectProtocol {
 class ProductPresenter {
     
     weak fileprivate var productView : ProductView?
-    fileprivate let productService : ProductService
-    fileprivate let userService : UserService
     
-    init(productService: ProductService, userService: UserService) {
-        self.productService = productService
-        self.userService = userService
-    }
+    private init() {}
+    static let sharedInstance = ProductPresenter()
     
     func attachView(view: ProductView) {
         self.productView = view
@@ -49,7 +45,7 @@ class ProductPresenter {
     func getProductsAPI() {
         self.productView?.startLoading()
         
-        self.productService.getProductsAPI(callBack: { [weak self](datas) in
+        APIService.sharedInstance.getProductsAPI(callBack: { [weak self](datas) in
             
             self?.productView?.finishLoading()
             
@@ -75,7 +71,7 @@ class ProductPresenter {
     func getUserAPI() {
         self.productView?.startLoading()
         
-        self.userService.getUserAPI(callBack: { [weak self](data) in
+        APIService.sharedInstance.getUserAPI(callBack: { [weak self](data) in
             
             self?.productView?.finishLoading()
             self?.productView?.setUser(data: UserViewData(userName: data.name!, email: data.email!))

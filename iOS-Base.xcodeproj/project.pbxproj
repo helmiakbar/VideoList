@@ -24,10 +24,9 @@
 		9B4E03AF1F4EB82A000DC578 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E03AE1F4EB82A000DC578 /* DataManager.swift */; };
 		9B4E03B11F4EB86C000DC578 /* UtilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E03B01F4EB86C000DC578 /* UtilityManager.swift */; };
 		9B4E03B51F4EB936000DC578 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E03B41F4EB936000DC578 /* User.swift */; };
-		9B4E03BB1F4EC4AB000DC578 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E03BA1F4EC4AB000DC578 /* UserService.swift */; };
 		9B4E03BE1F4EE1FB000DC578 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E03BD1F4EE1FB000DC578 /* Product.swift */; };
-		9B4E03C01F4EE27C000DC578 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E03BF1F4EE27C000DC578 /* ProductService.swift */; };
 		9B4E03C21F4EE38C000DC578 /* ProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E03C11F4EE38C000DC578 /* ProductPresenter.swift */; };
+		9BE5AFAB1FAB06AA00C745F3 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE5AFAA1FAB06AA00C745F3 /* APIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,10 +70,9 @@
 		9B4E03AE1F4EB82A000DC578 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		9B4E03B01F4EB86C000DC578 /* UtilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityManager.swift; sourceTree = "<group>"; };
 		9B4E03B41F4EB936000DC578 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		9B4E03BA1F4EC4AB000DC578 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		9B4E03BD1F4EE1FB000DC578 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
-		9B4E03BF1F4EE27C000DC578 /* ProductService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		9B4E03C11F4EE38C000DC578 /* ProductPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductPresenter.swift; sourceTree = "<group>"; };
+		9BE5AFAA1FAB06AA00C745F3 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		9D818A16083564E9A966A68A /* Pods-iOS-Base.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Base.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-Base/Pods-iOS-Base.debug.xcconfig"; sourceTree = "<group>"; };
 		B9AC19D99D0969B97722487F /* Pods_iOS_BaseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_BaseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BECB762CD59BADDE32B9EEA2 /* Pods-iOS-BaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-BaseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-BaseTests/Pods-iOS-BaseTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -194,6 +192,7 @@
 			children = (
 				9B4E03AA1F4EB57E000DC578 /* Constant.swift */,
 				9B4E03AC1F4EB628000DC578 /* APIManager.swift */,
+				9BE5AFAA1FAB06AA00C745F3 /* APIService.swift */,
 				9B4E03AE1F4EB82A000DC578 /* DataManager.swift */,
 				9B4E03B01F4EB86C000DC578 /* UtilityManager.swift */,
 			);
@@ -230,8 +229,6 @@
 				9B4E03761F4E9033000DC578 /* Main.storyboard */,
 				9B4E03741F4E9033000DC578 /* ProductViewController.swift */,
 				9B4E03C11F4EE38C000DC578 /* ProductPresenter.swift */,
-				9B4E03BF1F4EE27C000DC578 /* ProductService.swift */,
-				9B4E03BA1F4EC4AB000DC578 /* UserService.swift */,
 			);
 			name = "MVP Example";
 			sourceTree = "<group>";
@@ -533,9 +530,8 @@
 				9B4E03AF1F4EB82A000DC578 /* DataManager.swift in Sources */,
 				9B4E03BE1F4EE1FB000DC578 /* Product.swift in Sources */,
 				9B4E03C21F4EE38C000DC578 /* ProductPresenter.swift in Sources */,
-				9B4E03C01F4EE27C000DC578 /* ProductService.swift in Sources */,
 				9B4E03AB1F4EB57E000DC578 /* Constant.swift in Sources */,
-				9B4E03BB1F4EC4AB000DC578 /* UserService.swift in Sources */,
+				9BE5AFAB1FAB06AA00C745F3 /* APIService.swift in Sources */,
 				9B4E03B51F4EB936000DC578 /* User.swift in Sources */,
 				9B4E03A91F4EB175000DC578 /* BaseTableViewController.swift in Sources */,
 				9B4E03B11F4EB86C000DC578 /* UtilityManager.swift in Sources */,

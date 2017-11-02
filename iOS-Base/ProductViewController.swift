@@ -14,15 +14,14 @@ class ProductViewController: BaseViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyView: UIView!
     
-    fileprivate let productPresenter = ProductPresenter(productService: ProductService(), userService: UserService())
     fileprivate var productsToDisplay = [ProductViewData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        productPresenter.attachView(view: self)
-        productPresenter.getProductsAPI()
-        productPresenter.getUserAPI()
+        ProductPresenter.sharedInstance.attachView(view: self)
+        ProductPresenter.sharedInstance.getProductsAPI()
+        ProductPresenter.sharedInstance.getUserAPI()
     }
 
     override func didReceiveMemoryWarning() {
