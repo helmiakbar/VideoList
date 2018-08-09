@@ -31,7 +31,7 @@ class MovieDetailViewController: BaseViewController, UICollectionViewDelegate, U
         
         let imageUrl = self.moviePoster
         let imagePath = "https://image.tmdb.org/t/p/w500\(imageUrl ?? "")"
-        
+    
         if imagePath != "" {
             let resourceImage = ImageResource(downloadURL: URL(string: imagePath)!, cacheKey: imagePath)
             self.movieImage.kf.setImage(with:resourceImage, options: [.forceRefresh])
