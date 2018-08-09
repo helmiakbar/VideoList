@@ -12,12 +12,13 @@ struct Constant {
     
     private struct Domains {
         static let Development = "http://128.199.91.243"
-        static let Production = "http://api.clappingape.com"
+        static let Production = "https://api.themoviedb.org"
     }
     
     private struct Routes {
-        static let Product = "/api/v1/products/all_products_without_login"
-        static let Login = "/api/v1/users/login_process"
+        
+        static let Movies = "/3/movie/now_playing"
+        static let RelatedMovie = "/3/movie"
     }
     
     struct Notification {
@@ -26,8 +27,9 @@ struct Constant {
     
     static let LocaleIdentifier = "id_ID"
     
-    static let BaseURL = Domains.Development
-    static let RouteProduct = Routes.Product
-    static let RouteLogin = Routes.Login
+    static let BaseURL = Domains.Production
+    
+    static let RouteGetMoview = Routes.Movies
+    static let RouteGetRelatedMovie = Routes.RelatedMovie
     
 }

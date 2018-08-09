@@ -32,17 +32,17 @@ class APIManager {
                 
                 print("RESPONSE.BODY: \(responseJSON)")
                 
-                if responseJSON["status"] != nil {
-                    let status = responseJSON["status"] as! Bool
-                    if status == false {
-                        if responseJSON["message"] != nil {
-                            failureBlock(responseJSON["message"] as! String)
-                        }else{
-                            failureBlock("Unknown Error")
-                        }
-                    }else{
+                if responseJSON["results"] != nil {
+//                    let status = responseJSON["results"] as! Array<[String:Any]>
+//                    if status == false {
+//                        if responseJSON["message"] != nil {
+//                            failureBlock(responseJSON["message"] as! String)
+//                        }else{
+//                            failureBlock("Unknown Error")
+//                        }
+//                    }else{
                         successBlock(responseJSON)
-                    }
+//                    }
                 }else {
                     failureBlock("Error with undefined status")
                 }

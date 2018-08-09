@@ -40,15 +40,12 @@ class DataManager {
         return UserDefaults.standard.value(forKey: "USER_ID_USERDEFAULTS") as! Int
     }
     
-    func setUserDetail(user: User) {
-        let encodedData = NSKeyedArchiver.archivedData(withRootObject: user)
-        UserDefaults.standard.set(encodedData, forKey: "USER_DETAIL_USERDEFAULTS")
+    func setMovieId(movieId: Int) {
+        UserDefaults.standard.set(movieId, forKey: "movieId")
     }
     
-    func getUserDetail() -> User {
-        let data = UserDefaults.standard.data(forKey: "USER_DETAIL_USERDEFAULTS")
-        let user = NSKeyedUnarchiver.unarchiveObject(with: data!) as? User
-        return user!
+    func getMovieId() -> Int {
+        return UserDefaults.standard.value(forKey: "movieId") as? Int ?? 0
     }
     
 }
