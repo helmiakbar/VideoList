@@ -16,6 +16,8 @@ target 'iOS-Base' do
   target 'iOS-BaseTests' do
     inherit! :search_paths
     # Pods for testing
+        pod 'Quick', '1.1.0'
+        pod 'Nimble', '7.0.1'
   end
 
   target 'iOS-BaseUITests' do

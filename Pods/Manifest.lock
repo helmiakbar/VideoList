@@ -4,7 +4,9 @@ PODS:
     - Fabric (~> 1.6.3)
   - Fabric (1.6.11)
   - Kingfisher (3.11.0)
+  - Nimble (7.0.1)
   - NVActivityIndicatorView (3.6.1)
+  - Quick (1.1.0)
   - SideMenu (2.3.2)
 
 DEPENDENCIES:
@@ -12,8 +14,20 @@ DEPENDENCIES:
   - Crashlytics
   - Fabric
   - Kingfisher (from `https://github.com/onevcat/Kingfisher`, branch `master`)
+  - Nimble (= 7.0.1)
   - NVActivityIndicatorView (~> 3.6.0)
+  - Quick (= 1.1.0)
   - SideMenu
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Crashlytics
+    - Fabric
+    - Nimble
+    - NVActivityIndicatorView
+    - Quick
+    - SideMenu
 
 EXTERNAL SOURCES:
   Kingfisher:
@@ -30,9 +44,11 @@ SPEC CHECKSUMS:
   Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   Kingfisher: f5778831caa434a1b15292a8065acae4a0be0de6
+  Nimble: 657d000e11df8aebe27cdaf9d244de7f30ed87f7
   NVActivityIndicatorView: 9f52a7f84bf5c6a798722c450fe3c198e01c56ed
+  Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
   SideMenu: 3fa07dd05d4bade2b6f9889fb1877e312e1ba319
 
-PODFILE CHECKSUM: 4805852bdb633d1078e70249b5b359efb1668a4e
+PODFILE CHECKSUM: 733cc1bf45582540b6cbd4d18f25f24904b92f75
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3
